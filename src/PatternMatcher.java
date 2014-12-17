@@ -2,7 +2,9 @@ import java.util.List;
 
 public class PatternMatcher {
 
-    public String match(List<Tuple> tuples, int integer) {
+    private List<Tuple> tuples = TupleBuilder.buildTuples();
+
+    public String match(int integer) {
         for (Tuple tuple : tuples) {
             if (tuple.getChecker().test(integer)) {
                 return tuple.getValue().get();
